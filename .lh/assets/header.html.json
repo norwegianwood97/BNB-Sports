@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1758903797451,
@@ -24,6 +24,10 @@
                 {
                     "date": 1758907317672,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <!-- header.html -->\r\n <header>\r\n   <nav>\r\n-    <a href=\"/index.html\" class=\"logo\">SkatingStart</a>\r\n+    <a href=\"../index.html\" class=\"logo\">SkatingStart</a>\r\n     <ul>\r\n-      <li><a href=\"/about.html\">브랜드 소개</a></li>\r\n-      <li><a href=\"/products/productsList.html\">제품 소개</a></li>\r\n+      <li><a href=\"../about.html\">브랜드 소개</a></li>\r\n+      <li><a href=\"../products/productsList.html\">제품 소개</a></li>\r\n       <li>\r\n         <a href=\"https://smartstore.naver.com/\" target=\"_blank\">스마트스토어</a>\r\n       </li>\r\n     </ul>\r\n"
+                },
+                {
+                    "date": 1758907779593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <!-- header.html -->\r\n <header>\r\n   <nav>\r\n-    <a href=\"../index.html\" class=\"logo\">SkatingStart</a>\r\n+    <a href=\"/SkatingStart/index.html\" class=\"logo\">SkatingStart</a>\r\n     <ul>\r\n-      <li><a href=\"../about.html\">브랜드 소개</a></li>\r\n-      <li><a href=\"../products/productsList.html\">제품 소개</a></li>\r\n+      <li><a href=\"/SkatingStart/about.html\">브랜드 소개</a></li>\r\n+      <li><a href=\"/SkatingStart/products/productsList.html\">제품 소개</a></li>\r\n       <li>\r\n         <a href=\"https://smartstore.naver.com/\" target=\"_blank\">스마트스토어</a>\r\n       </li>\r\n     </ul>\r\n"
                 }
             ],
             "date": 1758903797451,
