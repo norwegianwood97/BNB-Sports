@@ -1,0 +1,40 @@
+<body>
+  <div id="header-placeholder"></div>
+
+  <section class="hero">
+    <h1>SkatingStart</h1>
+    <p>당신의 스케이팅 여정을 함께합니다.</p>
+    <a href="https://smartstore.naver.com/" class="btn" target="_blank"
+      >스마트스토어에서 보기</a
+    >
+  </section>
+
+  <section class="products-preview">
+    <h2>대표 제품</h2>
+    <div class="grid">
+      <a href="products/product1.html"
+        ><img src="assets/images/products/product1.jpg" alt="제품1"
+      /></a>
+      <a href="products/product2.html"
+        ><img src="assets/images/products/product2.jpg" alt="제품2"
+      /></a>
+      <a href="products/product3.html"
+        ><img src="assets/images/products/product3.jpg" alt="제품3"
+      /></a>
+    </div>
+    <a href="products/product1.html" class="btn">전체 제품 보기</a>
+  </section>
+
+  <footer>
+    <p>© 2025 SkatingStart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    fetch('assets/header.html')
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch((error) => console.error('Header 불러오기 실패:', error));
+  </script>
+</body>

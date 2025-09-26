@@ -1,0 +1,34 @@
+{
+    "sourceFile": "products/product1.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1758903520219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1758905123331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,26 +2,13 @@\n <html lang=\"ko\">\r\n   <head>\r\n     <meta charset=\"UTF-8\" />\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n-    <title>Beginner Pro 인라인스케이트 - SkatingStart</title>\r\n-    <link rel=\"stylesheet\" href=\"../assets/css/style.css\" />\r\n+    <title>메인페이지</title>\r\n+    <link rel=\"stylesheet\" href=\"assets/css/style.css\" />\r\n   </head>\r\n   <body>\r\n-    <header>\r\n-      <nav>\r\n-        <a href=\"../index.html\" class=\"logo\">SkatingStart</a>\r\n-        <ul>\r\n-          <li><a href=\"../about.html\">브랜드 소개</a></li>\r\n-          <li><a href=\"product1.html\">제품 소개</a></li>\r\n-          <li>\r\n-            <a href=\"https://smartstore.naver.com/\" target=\"_blank\"\r\n-              >스마트스토어</a\r\n-            >\r\n-          </li>\r\n-        </ul>\r\n-      </nav>\r\n-    </header>\r\n+    <div id=\"header-placeholder\"></div>\r\n \r\n     <main class=\"product-detail\">\r\n       <div class=\"product-image\">\r\n         <img\r\n"
+                },
+                {
+                    "date": 1758905135298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,24 @@\n   </head>\r\n   <body>\r\n     <div id=\"header-placeholder\"></div>\r\n \r\n+  <body>\r\n+    <header>\r\n+      <nav>\r\n+        <a href=\"../index.html\" class=\"logo\">SkatingStart</a>\r\n+        <ul>\r\n+          <li><a href=\"../about.html\">브랜드 소개</a></li>\r\n+          <li><a href=\"product1.html\">제품 소개</a></li>\r\n+          <li>\r\n+            <a href=\"https://smartstore.naver.com/\" target=\"_blank\"\r\n+              >스마트스토어</a\r\n+            >\r\n+          </li>\r\n+        </ul>\r\n+      </nav>\r\n+    </header>\r\n+\r\n     <main class=\"product-detail\">\r\n       <div class=\"product-image\">\r\n         <img\r\n           src=\"../assets/images/products/product1.jpg\"\r\n"
+                },
+                {
+                    "date": 1758905161862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n   </head>\r\n   <body>\r\n     <div id=\"header-placeholder\"></div>\r\n \r\n-  <body>\r\n \r\n     <main class=\"product-detail\">\r\n       <div class=\"product-image\">\r\n         <img\r\n"
+                },
+                {
+                    "date": 1758905172022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   <head>\r\n     <meta charset=\"UTF-8\" />\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n     <title>메인페이지</title>\r\n-    <link rel=\"stylesheet\" href=\"assets/css/style.css\" />\r\n+    <link rel=\"stylesheet\" href=\"../assets/css/style.css\" />\r\n   </head>\r\n   <body>\r\n     <div id=\"header-placeholder\"></div>\r\n \r\n@@ -32,15 +32,28 @@\n           <li>베어링: ABEC-5</li>\r\n           <li>컬러: 블루 / 핑크</li>\r\n         </ul>\r\n \r\n-        <a href=\"https://smartstore.naver.com/\" class=\"btn\" target=\"_blank\"\r\n-          >스마트스토어에서 구매하기</a\r\n-        >\r\n+        <a href=\"https://smartstore.naver.com/\" class=\"btn\" target=\"_blank\">\r\n+          스마트스토어에서 구매하기\r\n+        </a>\r\n       </div>\r\n     </main>\r\n \r\n     <footer>\r\n       <p>© 2025 SkatingStart. All rights reserved.</p>\r\n     </footer>\r\n+\r\n+    <script>\r\n+      fetch('../assets/header.html')\r\n+        .then((response) => {\r\n+          if (!response.ok)\r\n+            throw new Error(`HTTP error! status: ${response.status}`);\r\n+          return response.text();\r\n+        })\r\n+        .then((data) => {\r\n+          document.getElementById('header-placeholder').innerHTML = data;\r\n+        })\r\n+        .catch((error) => console.error('Header 불러오기 실패:', error));\r\n+    </script>\r\n   </body>\r\n </html>\r\n"
+                }
+            ],
+            "date": 1758903520219,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"ko\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Beginner Pro 인라인스케이트 - SkatingStart</title>\r\n    <link rel=\"stylesheet\" href=\"../assets/css/style.css\" />\r\n  </head>\r\n  <body>\r\n    <header>\r\n      <nav>\r\n        <a href=\"../index.html\" class=\"logo\">SkatingStart</a>\r\n        <ul>\r\n          <li><a href=\"../about.html\">브랜드 소개</a></li>\r\n          <li><a href=\"product1.html\">제품 소개</a></li>\r\n          <li>\r\n            <a href=\"https://smartstore.naver.com/\" target=\"_blank\"\r\n              >스마트스토어</a\r\n            >\r\n          </li>\r\n        </ul>\r\n      </nav>\r\n    </header>\r\n\r\n    <main class=\"product-detail\">\r\n      <div class=\"product-image\">\r\n        <img\r\n          src=\"../assets/images/products/product1.jpg\"\r\n          alt=\"Beginner Pro 인라인스케이트\"\r\n        />\r\n      </div>\r\n\r\n      <div class=\"product-info\">\r\n        <h1>Beginner Pro 인라인스케이트</h1>\r\n        <p class=\"desc\">\r\n          초보자도 쉽게 배울 수 있도록 설계된 Beginner Pro 모델은 가볍고 편안한\r\n          착용감을 제공합니다. 발목 지지대가 강화되어 안전하게 연습할 수\r\n          있습니다.\r\n        </p>\r\n\r\n        <ul class=\"specs\">\r\n          <li>사이즈: 220~270mm</li>\r\n          <li>프레임: 강화 플라스틱</li>\r\n          <li>바퀴: PU 휠, 72mm</li>\r\n          <li>베어링: ABEC-5</li>\r\n          <li>컬러: 블루 / 핑크</li>\r\n        </ul>\r\n\r\n        <a href=\"https://smartstore.naver.com/\" class=\"btn\" target=\"_blank\"\r\n          >스마트스토어에서 구매하기</a\r\n        >\r\n      </div>\r\n    </main>\r\n\r\n    <footer>\r\n      <p>© 2025 SkatingStart. All rights reserved.</p>\r\n    </footer>\r\n  </body>\r\n</html>\r\n"
+        }
+    ]
+}

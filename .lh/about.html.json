@@ -1,0 +1,26 @@
+{
+    "sourceFile": "about.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1758902944765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1758903489475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       <nav>\r\n         <a href=\"index.html\" class=\"logo\">SkatingStart</a>\r\n         <ul>\r\n           <li><a href=\"about.html\">브랜드 소개</a></li>\r\n-          <li><a href=\"products/product1.html\">제품 소개</a></li>\r\n+          <li><a href=\"products/productPage_1.html\">제품 소개</a></li>\r\n           <li>\r\n             <a href=\"https://smartstore.naver.com/\" target=\"_blank\"\r\n               >스마트스토어</a\r\n             >\r\n"
+                },
+                {
+                    "date": 1758903495721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,39 +1,32 @@\n <!DOCTYPE html>\r\n <html lang=\"ko\">\r\n-  <head>\r\n-    <meta charset=\"UTF-8\" />\r\n-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n-    <title>SkatingStart - 브랜드 소개</title>\r\n-    <link rel=\"stylesheet\" href=\"assets/css/style.css\" />\r\n-  </head>\r\n-  <body>\r\n-    <header>\r\n-      <nav>\r\n-        <a href=\"index.html\" class=\"logo\">SkatingStart</a>\r\n-        <ul>\r\n-          <li><a href=\"about.html\">브랜드 소개</a></li>\r\n-          <li><a href=\"products/productPage_1.html\">제품 소개</a></li>\r\n-          <li>\r\n-            <a href=\"https://smartstore.naver.com/\" target=\"_blank\"\r\n-              >스마트스토어</a\r\n-            >\r\n-          </li>\r\n-        </ul>\r\n-      </nav>\r\n-    </header>\r\n+<head>\r\n+  <meta charset=\"UTF-8\">\r\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n+  <title>SkatingStart - 브랜드 소개</title>\r\n+  <link rel=\"stylesheet\" href=\"assets/css/style.css\">\r\n+</head>\r\n+<body>\r\n+  <header>\r\n+    <nav>\r\n+      <a href=\"index.html\" class=\"logo\">SkatingStart</a>\r\n+      <ul>\r\n+        <li><a href=\"about.html\">브랜드 소개</a></li>\r\n+        <li><a href=\"products/product1.html\">제품 소개</a></li>\r\n+        <li><a href=\"https://smartstore.naver.com/\" target=\"_blank\">스마트스토어</a></li>\r\n+      </ul>\r\n+    </nav>\r\n+  </header>\r\n \r\n-    <main>\r\n-      <section class=\"brand-intro\">\r\n-        <h1>SkatingStart 브랜드 소개</h1>\r\n-        <p>\r\n-          SkatingStart는 인라인스케이트 전문 브랜드로, 초보자부터 전문가까지\r\n-          모두 만족할 수 있는 제품을 제공합니다.\r\n-        </p>\r\n-      </section>\r\n-    </main>\r\n+  <main>\r\n+    <section class=\"brand-intro\">\r\n+      <h1>SkatingStart 브랜드 소개</h1>\r\n+      <p>SkatingStart는 인라인스케이트 전문 브랜드로, 초보자부터 전문가까지 모두 만족할 수 있는 제품을 제공합니다.</p>\r\n+    </section>\r\n+  </main>\r\n \r\n-    <footer>\r\n-      <p>© 2025 SkatingStart. All rights reserved.</p>\r\n-    </footer>\r\n-  </body>\r\n+  <footer>\r\n+    <p>© 2025 SkatingStart. All rights reserved.</p>\r\n+  </footer>\r\n+</body>\r\n </html>\r\n"
+                }
+            ],
+            "date": 1758902944765,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"ko\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>SkatingStart - 브랜드 소개</title>\r\n  <link rel=\"stylesheet\" href=\"assets/css/style.css\">\r\n</head>\r\n<body>\r\n  <header>\r\n    <nav>\r\n      <a href=\"index.html\" class=\"logo\">SkatingStart</a>\r\n      <ul>\r\n        <li><a href=\"about.html\">브랜드 소개</a></li>\r\n        <li><a href=\"products/product1.html\">제품 소개</a></li>\r\n        <li><a href=\"https://smartstore.naver.com/\" target=\"_blank\">스마트스토어</a></li>\r\n      </ul>\r\n    </nav>\r\n  </header>\r\n\r\n  <main>\r\n    <section class=\"brand-intro\">\r\n      <h1>SkatingStart 브랜드 소개</h1>\r\n      <p>SkatingStart는 인라인스케이트 전문 브랜드로, 초보자부터 전문가까지 모두 만족할 수 있는 제품을 제공합니다.</p>\r\n    </section>\r\n  </main>\r\n\r\n  <footer>\r\n    <p>© 2025 SkatingStart. All rights reserved.</p>\r\n  </footer>\r\n</body>\r\n</html>\r\n"
+        }
+    ]
+}

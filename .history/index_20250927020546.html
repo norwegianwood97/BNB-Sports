@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인페이지</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <section class="main-image">
+      <img
+        src="assets/images/products/products_8skates.jpg"
+        alt="메인페이지사진"
+      />
+    </section>
+
+    <section class="products-preview">
+      <h2>대표 제품</h2>
+      <div class="grid">
+        <div class="product-card" onclick="location.href='product1.html'">
+          <img src="../assets/images/products/product1.jpg" alt="제품1" />
+          <div class="product-name">제품1</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product2.html'">
+          <img src="../assets/images/products/product2.jpg" alt="제품2" />
+          <div class="product-name">제품2</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product3.html'">
+          <img src="../assets/images/products/product3.jpg" alt="제품3" />
+          <div class="product-name">제품3</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 SkatingStart. All rights reserved.</p>
+    </footer>
+
+    <script>
+      fetch('./assets/header.html')
+        .then((response) => {
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch((error) => console.error('Header 불러오기 실패:', error));
+    </script>
+  </body>
+</html>

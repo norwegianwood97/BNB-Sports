@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제품 목록 - SkatingStart</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* 제품 목록 그리드 */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .product-card {
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .product-name {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #111;
+    }
+
+    @media (max-width: 900px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- header placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <h1 style="text-align:center; margin-top:2rem;">제품 목록</h1>
+    <div class="products-grid">
+      <!-- 각 제품 카드 -->
+      <div class="product-card" onclick="location.href='product1.html'">
+        <img src="../asset
