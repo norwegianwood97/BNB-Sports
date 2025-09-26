@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1758905243309,
@@ -16,6 +16,10 @@
                 {
                     "date": 1758907678570,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,18 +2,20 @@\n <html lang=\"ko\">\r\n   <head>\r\n     <meta charset=\"UTF-8\" />\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n-    <title>메인페이지</title>\r\n-    <link rel=\"stylesheet\" href=\"../assets/css/style.css\" />\r\n+    <title>제품 상세페이지</title>\r\n+    <!-- 절대경로 CSS -->\r\n+    <link rel=\"stylesheet\" href=\"/SkatingStart/assets/css/style.css\" />\r\n   </head>\r\n   <body>\r\n+    <!-- header 불러오기 절대경로 -->\r\n     <div id=\"header-placeholder\"></div>\r\n \r\n     <main class=\"product-detail\">\r\n       <div class=\"product-image\">\r\n         <img\r\n-          src=\"../assets/images/products/product3.jpg\"\r\n+          src=\"/SkatingStart/assets/images/products/product3.jpg\"\r\n           alt=\"Speed Master 인라인스케이트\"\r\n         />\r\n       </div>\r\n \r\n@@ -32,20 +34,20 @@\n           <li>베어링: ABEC-9</li>\r\n           <li>컬러: 블랙 / 네온그린</li>\r\n         </ul>\r\n \r\n-        <a href=\"https://smartstore.naver.com/\" class=\"btn\" target=\"_blank\"\r\n-          >스마트스토어에서 구매하기</a\r\n-        >\r\n+        <a href=\"https://smartstore.naver.com/\" class=\"btn\" target=\"_blank\">\r\n+          스마트스토어에서 구매하기\r\n+        </a>\r\n       </div>\r\n     </main>\r\n \r\n     <footer>\r\n       <p>© 2025 SkatingStart. All rights reserved.</p>\r\n     </footer>\r\n \r\n     <script>\r\n-      fetch('../assets/header.html')\r\n+      fetch('/SkatingStart/assets/header.html')\r\n         .then((response) => {\r\n           if (!response.ok)\r\n             throw new Error(`HTTP error! status: ${response.status}`);\r\n           return response.text();\r\n"
+                },
+                {
+                    "date": 1758908434760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,19 +3,19 @@\n   <head>\r\n     <meta charset=\"UTF-8\" />\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n     <title>제품 상세페이지</title>\r\n-    <!-- 절대경로 CSS -->\r\n-    <link rel=\"stylesheet\" href=\"/SkatingStart/assets/css/style.css\" />\r\n+    <!-- 상대경로 CSS -->\r\n+    <link rel=\"stylesheet\" href=\"../assets/css/style.css\" />\r\n   </head>\r\n   <body>\r\n-    <!-- header 불러오기 절대경로 -->\r\n+    <!-- header 불러오기 -->\r\n     <div id=\"header-placeholder\"></div>\r\n \r\n     <main class=\"product-detail\">\r\n       <div class=\"product-image\">\r\n         <img\r\n-          src=\"/SkatingStart/assets/images/products/product3.jpg\"\r\n+          src=\"../assets/images/products/product3.jpg\"\r\n           alt=\"Speed Master 인라인스케이트\"\r\n         />\r\n       </div>\r\n \r\n@@ -45,12 +45,12 @@\n       <p>© 2025 SkatingStart. All rights reserved.</p>\r\n     </footer>\r\n \r\n     <script>\r\n-      fetch('/SkatingStart/assets/header.html')\r\n+      // header.html 상대경로\r\n+      fetch('../assets/header.html')\r\n         .then((response) => {\r\n-          if (!response.ok)\r\n-            throw new Error(`HTTP error! status: ${response.status}`);\r\n+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);\r\n           return response.text();\r\n         })\r\n         .then((data) => {\r\n           document.getElementById('header-placeholder').innerHTML = data;\r\n"
                 }
             ],
             "date": 1758905243309,
