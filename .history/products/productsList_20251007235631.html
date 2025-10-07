@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BNB Sports-SkatingStart</title>
+    <!-- 상대경로 CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <!-- header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+      <h1 style="text-align: center; font-size: 3rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+        <a href="https://smartstore.naver.com/bnb_sports/category/47d9288759ce4244878dee499c262e53?cp=1" 
+          target="_blank" 
+          style="color: #111; text-decoration: none; display: flex; align-items: center; gap: 1rem;">
+          <img src="../assets/images/brandLogos/skatingstart.png" 
+              alt="skatingstart 로고" 
+              style="height: 3rem; width: auto;" />
+          SkatingStart
+        </a>
+      </h1>
+
+
+      <div class="products-grid">
+        <!-- 각 제품 카드 -->
+        <div class="product-card" onclick="location.href='product1.html'">
+          <img src="../assets/images/products/skatingStart/K-1000/K1000.jpg" alt="K1000" />
+          <div class="product-name">K1000</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product2.html'">
+          <img src="../assets/images/products/skatingStart/K-PRO/KPro.jpg" alt="KPro" />
+          <div class="product-name">KPro</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product3.html'">
+          <img src="../assets/images/products/skatingStart/Custom boots/CustomBoots.jpg" alt="Custom Boots" />
+          <div class="product-name">Custom Boots</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product4.html'">
+          <img src="../assets/images/products/skatingStart/Frame/Frame.jpg" alt="Frame" />
+          <div class="product-name">Frame</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product5.html'">
+          <img src="../assets/images/products/skatingStart/Wheel/Wheel.png"alt="Wheel" />
+          <div class="product-name">Wheel</div>
+        </div>
+
+        <!-- 필요하면 더 추가 가능 -->
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 SkatingStart. All rights reserved.</p>
+    </footer>
+
+    <!-- header 불러오기 상대경로 -->
+    <script>
+      fetch('../assets/header.html')
+        .then((response) => {
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch((error) => console.error('Header 불러오기 실패:', error));
+    </script>
+  </body>
+</html>

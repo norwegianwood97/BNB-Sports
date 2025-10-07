@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인페이지</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <section class="main-image">
+      <div class="slider">
+        <div class="slide">
+          <img src="assets/images/products/skatingStart/MainPage/k1000.jpg" alt="K1000 제품" />
+        </div>
+        <div class="slide">
+          <img src="assets/images/products/skatingStart/MainPage/kPro.jpg" alt="KPro 제품" />
+        </div>
+        <div class="slide active">
+          <img src="assets/images/products/skatingStart/MainPage/Custom.jpg" alt="Custom 제품" />
+        </div>
+      </div>
+    </section>
+
+    <section class="main-image_roadstar">
+      <div class="slider">
+        <div class="slide">
+          <img src="assets/images/products/brandLogos/roadstar.png" alt="roadstar로고" />
+        </div>
+      </div>
+    </section>
+
+    <section class="main-image_cema">
+      <div class="slider">
+        <div class="slide">
+          <img src="assets/images/products/brandLogos/cema.png" alt="cema로고" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 SkatingStart. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // header 불러오기
+      fetch('assets/header.html')
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch((err) => console.error('Header 불러오기 실패:', err));
+
+      // 슬라이더 기능
+      document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slider .slide');
+        let currentIndex = 0;
+        const slideCount = slides.length;
+
+        function goToSlide(index) {
+          slides.forEach((sl, i) => {
+            if (i === index) {
+              sl.classList.add('active');
+            } else {
+              sl.classList.remove('active');
+            }
+          });
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % slideCount;
+          goToSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 5000); // 5초마다 변경
+      });
+    </script>
+  </body>
+</html>

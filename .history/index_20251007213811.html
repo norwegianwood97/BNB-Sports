@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인페이지</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- header 불러오기 -->
+    <div id="header-placeholder"></div>
+
+    <section class="main-image">
+      <div class="slider">
+        <img src="assets/images/products/Custom.jpg" alt="Custom 제품" class="active" />
+        <img src="assets/images/products/k1000.jpg" alt="K1000 제품" />
+        <img src="assets/images/products/kPro.jpg" alt="KPro 제품" />
+      </div>
+    </section>
+
+    <section class="products-preview">
+      <h2>대표 제품</h2>
+      <div class="grid">
+        <a href="products/product1.html">
+          <img src="assets/images/products/product1.jpg" alt="제품1" />
+        </a>
+        <a href="products/product2.html">
+          <img src="assets/images/products/product2.jpg" alt="제품2" />
+        </a>
+        <a href="products/product3.html">
+          <img src="assets/images/products/product3.jpg" alt="제품3" />
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 SkatingStart. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // header.html 불러오기
+      fetch('assets/header.html')
+        .then((res) => res.text())
+        .then((data) => (document.getElementById('header-placeholder').innerHTML = data))
+        .catch((err) => console.error('Header 불러오기 실패:', err));
+
+      // 이미지 슬라이드 전환
+      let current = 0;
+      const images = document.querySelectorAll('.slider img');
+      setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+      }, 4000); // 4초마다 전환
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "products/RoadStar.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1759850496096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1759850504157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n             src=\"../assets/images/brandLogos/roadstar.png\"\r\n             alt=\"RoadStar 로고\"\r\n             style=\"height: 3rem; width: auto\"\r\n           />\r\n-          roadstar\r\n+          Roadstar\r\n         </a>\r\n       </h1>\r\n \r\n       <div class=\"products-grid\">\r\n"
+                },
+                {
+                    "date": 1759850510522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n             src=\"../assets/images/brandLogos/roadstar.png\"\r\n             alt=\"RoadStar 로고\"\r\n             style=\"height: 3rem; width: auto\"\r\n           />\r\n-          Roadstar\r\n+          RoadStar\r\n         </a>\r\n       </h1>\r\n \r\n       <div class=\"products-grid\">\r\n"
+                }
+            ],
+            "date": 1759850496096,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"ko\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>BNB Sports-SkatingStart</title>\r\n    <!-- 상대경로 CSS -->\r\n    <link rel=\"stylesheet\" href=\"../assets/css/style.css\" />\r\n  </head>\r\n  <body>\r\n    <!-- header placeholder -->\r\n    <div id=\"header-placeholder\"></div>\r\n\r\n    <main>\r\n      <h1 style=\"text-align: center; font-size: 3rem; display: flex; align-items: center; justify-content: center; gap: 1rem;\">\r\n        <a href=\"https://smartstore.naver.com/bnb_sports/category/47d9288759ce4244878dee499c262e53?cp=1\" \r\n          target=\"_blank\" \r\n          style=\"color: #111; text-decoration: none; display: flex; align-items: center; gap: 1rem;\">\r\n          <img src=\"../assets/images/brandLogos/roadstar.png\" \r\n              alt=\"RoadStar 로고\" \r\n              style=\"height: 3rem; width: auto;\" />\r\n          roadstar\r\n        </a>\r\n      </h1>\r\n\r\n      <div class=\"products-grid\">\r\n        <!-- 각 제품 카드 -->\r\n        \r\n      </div>\r\n    </main>\r\n\r\n    <footer>\r\n      \r\n    </footer>\r\n\r\n    <!-- header 불러오기 상대경로 -->\r\n    <script>\r\n      fetch('../assets/header.html')\r\n        .then((response) => {\r\n          if (!response.ok)\r\n            throw new Error(`HTTP error! status: ${response.status}`);\r\n          return response.text();\r\n        })\r\n        .then((data) => {\r\n          document.getElementById('header-placeholder').innerHTML = data;\r\n        })\r\n        .catch((error) => console.error('Header 불러오기 실패:', error));\r\n    </script>\r\n  </body>\r\n</html>\r\n"
+        }
+    ]
+}

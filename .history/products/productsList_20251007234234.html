@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BNB Sports-SkatingStart</title>
+    <!-- 상대경로 CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <!-- header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+      <h1 style="text-align: center; margin-top: 2rem">SkatingStart</h1>
+      <div class="products-grid">
+        <!-- 각 제품 카드 -->
+        <div class="product-card" onclick="location.href='product1.html'">
+          <img src="../assets/images/products/product1.jpg" alt="제품1" />
+          <div class="product-name">K1000</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product2.html'">
+          <img src="../assets/images/products/product2.jpg" alt="제품2" />
+          <div class="product-name">KPro</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product3.html'">
+          <img src="../assets/images/products/product3.jpg" alt="제품3" />
+          <div class="product-name">Custom Boots</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product3.html'">
+          <img src="../assets/images/products/product3.jpg" alt="제품3" />
+          <div class="product-name">Frame</div>
+        </div>
+
+        <div class="product-card" onclick="location.href='product3.html'">
+          <img src="../assets/images/products/product3.jpg" alt="제품3" />
+          <div class="product-name">Wheel</div>
+        </div>
+
+        <!-- 필요하면 더 추가 가능 -->
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 SkatingStart. All rights reserved.</p>
+    </footer>
+
+    <!-- header 불러오기 상대경로 -->
+    <script>
+      fetch('../assets/header.html')
+        .then((response) => {
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch((error) => console.error('Header 불러오기 실패:', error));
+    </script>
+  </body>
+</html>

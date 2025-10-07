@@ -1,0 +1,353 @@
+/* 기본 스타일 */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding-top: 64px; /* 헤더 높이 확보 */
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  background: #111;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  width: 80%;       /* 화면 가로의 80% */
+  margin: 0 auto;   /* 가운데 정렬 */
+}
+
+
+header .logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  white-space: nowrap; /* 기본 한 줄 */
+}
+
+header ul li a:hover {
+  color: #ff5a5f;
+}
+
+/* --- Media Queries --- */
+
+/* 화면 ≤ 900px: 간격 줄이기 */
+@media (max-width: 900px) {
+  header nav {
+    gap: 1rem;
+  }
+  header ul {
+    gap: 1rem;
+  }
+}
+
+/* 화면 ≤ 600px: 글자 줄이고 flex-wrap 허용 */
+@media (max-width: 600px) {
+  header nav {
+    gap: 0.5rem;
+    flex-wrap: wrap; /* 메뉴 줄바꿈 허용 */
+  }
+  header ul li a {
+    font-size: 0.9rem;
+    white-space: normal; /* 줄바꿈 가능 */
+  }
+}
+
+/* 화면 ≤ 400px: 메뉴 세로 배치 */
+@media (max-width: 400px) {
+  header ul {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+
+header ul li a:hover {
+  color: #ff5a5f;
+}
+
+/*메인페이지*/
+
+/* 슬라이더 컨테이너 */
+.main-image_skatingStart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0; /* 상하 여백 */
+  background: #fff; /* 배경색 흰색으로 변경 */
+}
+
+
+/* 슬라이더 컨테이너 */
+.main-image_roadstar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0; /* 상하 여백 */
+  background: #fff; /* 여백 배경 (선택사항) */
+}
+
+/* 슬라이더 컨테이너 */
+.main-image_cema {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0; /* 상하 여백 */
+  background: #fff; /* 여백 배경 (선택사항) */
+}
+
+
+
+
+.slider {
+  position: relative;
+  width: 90%;          /* 중앙에 맞춘 영역 폭 */
+  max-width: 1200px;   /* 너무 커지지 않게 제한 */
+  aspect-ratio: 16 / 9; /* 화면 비율 유지 (16:9) */
+  overflow: hidden;
+  border-radius: 16px; /* 모서리 살짝 둥글게 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+  position: absolute;
+  inset: 0; /* top, right, bottom, left: 0; */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background-color: #ffffff; /* 여백 부분 검정 처리 (선택) */
+  display: block;
+}
+
+.slide-text {
+  position: absolute;       /* 이미지 위에 겹치게 */
+  top: 50%;                 /* 세로 중앙 */
+  left: 20px;               /* 왼쪽 여백, 필요시 조정 */
+  transform: translateY(-50%); /* y축 중앙 맞춤 */
+  color: #0a0000;           /* 텍스트 색상 */
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* 이미지 위에서 잘 보이도록 */
+  pointer-events: none;     /* 클릭 방해 안됨 */
+}
+
+
+
+
+.products-preview .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.products-preview .grid a {
+  display: block;
+  width: 250px; /* 카드 너비 */
+  height: 300px; /* 카드 높이 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  background: #fff;
+}
+
+.products-preview .grid a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 이미지 비율 유지 */
+  object-position: center; /* 중앙 정렬 */
+  display: block;
+}
+
+.products-preview .grid a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+  .products-preview .grid a {
+    width: 45%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-preview .grid a {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: #ff5a5f;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e04a50;
+}
+
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.product-card {
+  width: 100%;
+  height: 300px; /* 카드 높이 고정, 필요 시 조정 */
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden; /* 이미지가 영역을 넘으면 숨김 */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 이미지 위쪽부터 시작 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto; /* 세로 비율 유지 */
+  max-height: 70%; /* 카드 높이의 70%만 이미지 사용 */
+  object-fit: contain; /* 이미지 비율 유지 */
+  object-position: center;
+  display: block;
+  margin: 0 auto; /* 가운데 정렬 */
+  transition: transform 0.2s;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #111;
+  flex-grow: 1; /* 이미지 아래 공간 확보 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-image img {
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.product-info .desc {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.product-info .specs {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.product-info .specs li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.product-info .btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #ff5a5f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}

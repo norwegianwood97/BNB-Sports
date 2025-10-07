@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인페이지</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+  <section class="main-image_skatingStart">
+    <div class="slider active">
+      <div class="slide">
+        <a href="https://smartstore.naver.com/bnb_sports/category/9e08fc94c19c42ad96cc1e0fcaa89093?cp=1" target="_blank">
+          <div class="slide-content">
+            <img src="assets/images/mainPage/SkatingStart/배경삭제/k1000.png" alt="K1000 제품" />
+            <div class="slide-text">K1000 부츠</div>
+          </div>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="https://smartstore.naver.com/bnb_sports/category/b35a09f8196e475796b1afb44341c963?cp=1" target="_blank">
+          <div class="slide-content">
+            <img src="assets/images/mainPage/SkatingStart/배경삭제/kpro.png" alt="KPro 제품" />
+            <div class="slide-text">KPro 부츠</div>
+
+          </div>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="https://smartstore.naver.com/bnb_sports/category/5c07982b0df547cd8b5fb58ec7857fac?cp=1" target="_blank">
+          <div class="slide-content">
+            <img src="assets/images/mainPage/SkatingStart/배경삭제/custom.png" alt="Custom 제품" />
+            <div class="slide-text">커스텀 부츠</div>
+          </div>
+          
+        </a>
+      </div>
+    </div>
+  </section>
+
+    <section class="main-image_roadstar">
+      <div class="slider">
+        <div class="slide">
+          <img src="assets/images/mainPage/roadstar/suit.png" alt="roadstar로고" />
+        </div>
+      </div>
+    </section>
+
+    <section class="main-image_cema">
+      <div class="slider">
+        <div class="slide">
+          <img src="assets/images/mainPage/cema/bearing.png" alt="cema베어링" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 SkatingStart. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // header 불러오기
+      fetch('assets/header.html')
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch((err) => console.error('Header 불러오기 실패:', err));
+
+      // 슬라이더 기능
+      document.addEventListener('DOMContentLoaded', () => {
+        // 모든 슬라이더를 독립적으로 처리
+        const sliders = document.querySelectorAll('.slider');
+
+        sliders.forEach(slider => {
+          const slides = slider.querySelectorAll('.slide');
+          let currentIndex = 0;
+          const slideCount = slides.length;
+
+          function goToSlide(index) {
+            slides.forEach((sl, i) => {
+              if (i === index) sl.classList.add('active');
+              else sl.classList.remove('active');
+            });
+          }
+
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount;
+            goToSlide(currentIndex);
+          }
+
+          // 첫 화면 표시
+          goToSlide(currentIndex);
+
+          // 이미지가 1개 이상인 경우만 슬라이드
+          if (slideCount > 1) {
+            setInterval(nextSlide, 2000);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
