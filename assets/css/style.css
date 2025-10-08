@@ -60,12 +60,17 @@ header nav {
   gap: 2rem;
   list-style: none;
   margin: 0;
-  padding-right: 5rem;
+
   font-style: normal;
+}
+
+.nav-left{
+  padding-left: 10rem;
 }
 
 .nav-right {
   margin-right: 0;
+    padding-right: 10rem;
 }
 
 header .logo {
@@ -143,30 +148,51 @@ header nav ul li a img {
   vertical-align: middle; 
 }
 
-/* ================== 슬라이더 ================== */
-.slider {
-  position: relative;
-  width: 60%;
-  max-height: 700px;
-  aspect-ratio: 10 / 9;
-  overflow: hidden;
-  background-color: #e9dfd0; 
-  margin: 3rem auto 1rem auto; /* 위 3rem, 좌우 auto, 아래 0 */
+
+
+
+
+/* ================== 메인페이지 ================== */
+
+/* 섹션 배경 */
+.main-image_skatingStart,
+.main-image_roadstar,
+.main-image_cema {
+  background: linear-gradient(to bottom, #f5f3ef 0%, #eae6df 100%);
+  max-height: 40rem;
+  padding: 5rem 0;
+}
+
+main h1 a {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-right:1%;
 }
 
 
+
+
+
+/* ================== 슬라이더 ================== */
+.slider {
+  position: relative;
+  max-height: 33rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #e9dfd0;
+  margin: 1rem auto;
+}
+
 .slide {
-  position: absolute;
+  position: absolute;  /* active시 겹치게 */
   inset: 0;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
 }
 
-.slide.active { opacity: 1; z-index: 1; }
-
-.slide.active img {
-  transform: scale(1.05);
-  transition: transform 6s ease;
+.slide.active {
+  opacity: 1;
+  z-index: 1;
 }
 
 .slide img {
@@ -178,25 +204,30 @@ header nav ul li a img {
 }
 
 .slide-text {
-  position: relative;
-  margin-bottom: 1rem;
+  position: absolute;   /* 이미지 위에 겹치기 */
+  top: 1rem;            /* 위쪽 여백 */
+  left: 1rem;           /* 좌측 여백 */
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 
 .slide-title {
   font-size: 2.1rem;
-  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
   color: #2b1d0e;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.6rem;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .slide-title img.title-logo {
   height: 1.2em;
   width: auto;
 }
+
 
 /* ================== 제품 카드 ================== */
 .products-grid {
@@ -285,6 +316,9 @@ footer {
 @media (max-width: 900px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .products-preview .grid a { width: 45%; height: 250px; }
+  .slide-title {
+    font-weight: 5rem !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -295,7 +329,17 @@ footer {
   .nav-left, .nav-right { flex-direction: row; display: flex; gap: 0.5rem; margin: 0; padding: 0; }
   header nav::after { content: ""; display: block; clear: both; }
 
-  .slider { width: 90% !important; max-height: none; }
+
+  .main-image_skatingStart,
+  .main-image_roadstar,
+  .main-image_cema {
+    background: linear-gradient(to bottom, #f5f3ef 0%, #eae6df 100%);
+
+    padding: 3rem 0;
+  }
+
+  .slider { width: 90% !important; max-height: none;   margin: 0.1rem auto !important;}
+
   main h1 { margin: 0.5rem 0 !important; line-height: 1.2 !important; }
   main h1 a { font-size: 1.2rem !important; }
 
@@ -308,9 +352,33 @@ footer {
   .products-grid > a.product-card img { object-fit: cover; width: 100%; height: 100%; }
   .product-name { font-size: 0.5rem !important; }
 
-  .slide { width: 100%; height: auto; }
-  .slide-title { font-size: 1.2rem !important; }
-  .slide-title img.title-logo { height: 1em !important; }
+  @media (max-width: 600px) {
+  .slider {
+    width: 90% !important;
+    max-height: none;
+  }
+
+  .slide-text {
+    position: absolute !important;  /* 이미지 위에 겹치기 */
+    top: 0.1rem !important;              /* 위쪽 끝 */
+    left: 0.1rem !important;             /* 좌측 끝 */
+    padding: 0.3rem 0.5rem !important; /* 화면 좁을 때 텍스트 패딩 줄이기 */
+  }
+
+  .slide-title {
+    font-size: 1.2rem !important;  /* 화면 좁을 때 글씨 크기 조정 */
+    margin: 0;                      /* 불필요한 마진 제거 */
+    gap: 0.3rem;                    /* 로고와 글자 간격 조정 */
+  }
+
+  .slide-title img.title-logo {
+    height: 1em !important;
+  }
+  footer {
+    min-height: 1rem !important;
+  }
+}
+
 }
 
 @media (max-width: 400px) {
