@@ -1,10 +1,13 @@
-/* 기본 스타일 */
+/* --- 폰트 임포트 --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #f9f9f9;
-  color: #333;
-  padding-top: 64px; /* 헤더 높이 확보 */
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f5f3ef;
+  color: #2b1d0e;
+  padding-top: 64px;
+  overflow-x: hidden;
 }
 
 main {
@@ -13,55 +16,106 @@ main {
   padding: 2rem;
 }
 
+/* ---------------- 헤더 ---------------- */
 header {
-  background: #111;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 2rem;
-  width: 80%;       /* 화면 가로의 80% */
-  margin: 0 auto;   /* 가운데 정렬 */
+  width: 85%;
+  margin: 0 auto;
+  position: relative;
 }
 
+/* 왼쪽 메뉴 */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
+.nav-right {
+  margin-right: 3%;
+}
 
 header .logo {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: bold;
+  flex: 0 0 auto;
+  margin: 0 auto;
+  margin-left:38%;
+  position: relative;
+  left: auto;
+  transform: none;
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
   text-decoration: none;
+  white-space: nowrap;
+}
+
+/* 반응형 시 로고도 중앙 유지 */
+@media (max-width: 600px) {
+  header nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  header .logo {
+    position: static;
+    transform: none;
+    margin: 0.5rem 0;
+  }
+  .nav-left, .nav-right {
+    justify-content: center;
+  }
 }
 
 header ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-
 header ul li a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-  white-space: nowrap; /* 기본 한 줄 */
-  font-size: 1.1rem;   /* 글자 크기 추가 */
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 0.5rem; /* 아이콘과 글자 간격 */
 }
 
 header ul li a:hover {
-  color: #ff5a5f;
+  color: #d4af37;
+  transform: translateY(-2px);
 }
+
+
+header nav ul li a img {
+  height: 1em;
+  width: auto;
+  vertical-align: middle; 
+}
+
 
 /* --- Media Queries --- */
 
@@ -96,10 +150,6 @@ header ul li a:hover {
 }
 
 
-header ul li a:hover {
-  color: #ff5a5f;
-  
-}
 /* 드롭다운 기본 */
 ul li.dropdown {
   position: relative;
@@ -110,9 +160,8 @@ ul li.dropdown .dropdown-content {
   display: none;          
   position: absolute;
   top: 100%;               /* 부모 li 바로 아래 */
-  left: -30%;                 /* 중앙 정렬 */
-  background-color: #000;  /* 배경 검정 */
-  width: 130px;
+  left: -160%;                 /* 중앙 정렬 */
+  width: 200px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 1000;
   list-style: none;
@@ -126,21 +175,18 @@ ul li.dropdown .dropdown-content::before {
   content: "";
   display: block;
   height: 20px;           /* gap 크기 */
-  background-color: #000; /* 검정 배경 */
 }
 
 /* 드롭다운 항목 */
 ul li.dropdown .dropdown-content li a {
   display: block;
   padding: 10px 16px;
-  color: #fff;             
+  color: #000000;           
+  font-size: 1rem;  
   text-decoration: none;
   transition: background 0.2s;
 }
 
-ul li.dropdown .dropdown-content li a:hover {
-  background-color: #333;  
-}
 
 /* 마우스 오버 시 드롭다운 표시 */
 ul li.dropdown:hover .dropdown-content {
@@ -157,55 +203,41 @@ ul li.dropdown:focus-within .dropdown-content {
 
 /*메인페이지*/
 
-/* 슬라이더 컨테이너 */
-.main-image_skatingStart {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0; /* 상하 여백 */
-  background: #fff; /* 배경색 흰색으로 변경 */
-}
-
-
-/* 슬라이더 컨테이너 */
-.main-image_roadstar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0; /* 상하 여백 */
-  background: #fff; /* 여백 배경 (선택사항) */
-}
-
-/* 슬라이더 컨테이너 */
+/* 섹션 배경 */
+.main-image_skatingStart,
+.main-image_roadstar,
 .main-image_cema {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0; /* 상하 여백 */
-  background: #fff; /* 여백 배경 (선택사항) */
+  background: linear-gradient(to bottom, #f5f3ef 0%, #eae6df 100%);
+  padding: 5rem 0;
+}
+
+main h1 a {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-right:1%;
 }
 
 
 
-
+/* ---------------- 슬라이더 ---------------- */
 .slider {
   position: relative;
-  width: 90%;          /* 중앙에 맞춘 영역 폭 */
-  max-width: 1200px;   /* 너무 커지지 않게 제한 */
-  aspect-ratio: 16 / 9; /* 화면 비율 유지 (16:9) */
+  width: 50%;
+  max-height: 700px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 16px; /* 모서리 살짝 둥글게 */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  background-color: #e9dfd0; 
+  margin: 3rem auto;
 }
+
+
 
 .slide {
   position: absolute;
-  inset: 0; /* top, right, bottom, left: 0; */
+  inset: 0;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
 }
 
 .slide.active {
@@ -213,44 +245,48 @@ ul li.dropdown:focus-within .dropdown-content {
   z-index: 1;
 }
 
+.slide.active img {
+  transform: scale(1.05);
+  transition: transform 6s ease;
+}
+
+
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background-color: #ffffff; /* 여백 부분 검정 처리 (선택) */
   display: block;
 }
 
 .slide-text {
   position: absolute;
-  top: 5%;           /* y축 위치: 이미지 위에서 10% */
+   top: 0%;           /* y축 위치: 이미지 위에서 10% */
   left: 5%;           /* x축 위치: 좌측에서 5% 정도 */
-  transform: translateY(0);  /* top에 맞춰 이동, 필요 시 수정 */
-  color: #070000;     /* 텍스트 색상 */
-  font-size: 2rem;    /* 텍스트 크기 */
-  font-weight: bold;
-  pointer-events: none; /* 클릭 영역 방해 안 함 */
-  max-width: 40%;     /* 글자 영역 넓이 제한, 필요 시 조정 */
+  color: #f8f5f0;
 }
 
 .slide-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #2b1d0e;
   display: flex;
-  align-items: center; /* 텍스트와 이미지 수직 중앙 정렬 */
-  gap: 0.5rem;        /* 이미지와 텍스트 간격 */
-  font-size: 2rem;    /* h3 글자 크기 */
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .slide-title img.title-logo {
-  height: 1em;       /* 글자 높이에 맞춤 */
-  width: auto;       /* 비율 유지 */
-  object-fit: contain;
+  height: 1.2em;
+  width: auto;
 }
 
-
-.title-logo {
-  height: 1em;        /* 글자 높이에 맞춤 */
-  width: auto;        /* 비율 유지 */
+.slide-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2b1d0e;
+  margin: 0;
 }
 
 
@@ -304,20 +340,28 @@ ul li.dropdown:focus-within .dropdown-content {
   }
 }
 
+
+
+/* ---------------- 버튼 ---------------- */
 .btn {
   display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background: #ff5a5f;
-  color: white;
+  padding: 0.8rem 1.8rem;
+  border: 1px solid #d4af37;
+  background: transparent;
+  color: #2b1d0e;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s;
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: #e04a50;
+  background: #d4af37;
+  color: #fff;
 }
+
 
 .product-detail {
   display: flex;
@@ -340,7 +384,6 @@ ul li.dropdown:focus-within .dropdown-content {
   height: 700px;               /* 카드 높이 고정 */
   cursor: pointer;
   overflow: hidden;            /* 이미지가 카드 밖으로 나가지 않도록 */
-  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s, box-shadow 0.3s;
   display: block;
@@ -426,4 +469,17 @@ ul li.dropdown:focus-within .dropdown-content {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+}
+
+
+
+/* ---------------- 푸터 ---------------- */
+footer {
+  background: #111;
+  color: #f8f5f0;
+  text-align: center;
+  padding: 2rem 0;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(179, 139, 89, 0.3);
 }
