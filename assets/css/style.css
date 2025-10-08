@@ -92,7 +92,7 @@ ul li.dropdown {
 
 /* 기본 상태: 숨김 */
 ul li.dropdown .dropdown-content {
-  display: none;        /* 기본 숨김 */
+  display: flex;        /* 가로 */
   flex-direction: row;  /* hover 시 가로 방향 */
   position: absolute;
   top: 0;               /* 부모 기준 위치 */
